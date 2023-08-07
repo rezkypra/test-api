@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a th:href="@{/drug/form}">Create</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Stock</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="checkingdrug: ${checkingdrugs}">
+                    <td th:text="${checkingdrug.checkingDrug_id}">
+                    <td th:text="${checkingdrug.drug.drug_name}">
+                    <td th:text="${checkingdrug.employee.employee_name}">
+                    <td th:text="${checkingdrug.checking_status}">   
+                    <td><a th:href="@{checkingdrug/form/{id} (id = ${checkingdrug.checkingDrug_id})}">Edit</a> | 
+                        <form th:action="@{/checkingdrug/delete/{id} (id = ${checkingdrug.checkingDrug_id})}" method="post">
+                            <button type="submit">Delete</button>    
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

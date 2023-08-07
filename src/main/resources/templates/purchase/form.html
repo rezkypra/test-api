@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form th:action="@{/checkingdrug/save}" method="post" th:object="${checkingdrug}">
+            <input type="text" name="checkingDrug_id" id="checkingDrug_id" th:field="*{checkingDrug_id}" placeholder="id" />
+            <select th:field="*{drugs}">
+                <option th:each="drug: ${drugs}" th:value="${drug.drug_id}" th:selected="${drug.drug_id" th:text="${drug.drug_name}"></option>
+            </select>
+            <select th:field="*{employees}">
+                <option th:each="employee: ${employees}" th:value="${employee.employee_id}" th:selected="${employee.employee_id" th:text="${employee.employee_name}"></option>
+            </select>
+            <select th:field="*{checkingdrugs}">
+                <option th:each="checkingdrug: ${checkingdrugs}" th:value="${checkingdrug.checkingDrug_id}" th:selected="${checkingdrug.checkingDrug_id" th:text="${checkingdrug.checking_status}"></option>
+            </select>
+            <input type="text" name="amount_drugs" id="amount_drugs" th:field="*{amount_drugs}" placheholder="amount drugs"  />
+            <input type="text" name="total" id="total" th:field="*{total}" placheholder="total" />
+            <input type="date" name="purchase_date" id="purchase_date" th:field="*purchase_date}" placheholder="purchase date" />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

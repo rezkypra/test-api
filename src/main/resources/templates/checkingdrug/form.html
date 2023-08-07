@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form th:action="@{/checkingdrug/save}" method="post" th:object="${checkingdrug}">
+            <input type="text" name="checkingDrug_id" id="checkingDrug_id" th:field="*{checkingDrug_id}" placeholder="id" />
+            <select th:field="*{drugs}">
+                <option th:each="drug: ${drugs}" th:value="${drug.drug_id}" th:selected="${drug.drug_id" th:text="${drug.drug_name}"></option>
+            </select>
+            <select th:field="*{employees}">
+                <option th:each="employee: ${employees}" th:value="${employee.employee_id}" th:selected="${employee.employee_id" th:text="${employee.employee_name}"></option>
+            </select>
+            <select id="checking_status" name="checking_status" th:field="*{checking_status}">
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a th:href="@{/drug/form}">Create</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Stock</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="purchase: ${purchases}">
+                    <td th:text="${purchase.purchase_id}">
+                    <td th:text="${purchase.drug.drug_name}">
+                    <td th:text="${purchase.employee.employee_name}">
+                    <td th:text="${purchase.checkingdrug.checking_status}"></td>
+                    <td th:text="${purchase.amount_drugs}">
+                    <td th:text="${purchase.total}">
+                    <td th:text="${purchase.information}"></td>
+                    <td th:text="${purchase.purchase_date}"></td>      
+                    <td><a th:href="@{purchase/form/{id} (id = ${purchase.purchase_id})}">Edit</a> | 
+                        <form th:action="@{/purchase/delete/{id} (id = ${purchase.purchase_id})}" method="post">
+                            <button type="submit">Delete</button>    
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

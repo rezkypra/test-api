@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a th:href="@{/employee/form}">Create</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Join Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="employee: ${employees}">
+                    <td th:text="${employee.employee_id}">
+                    <td th:text="${employee.employee_name}">
+                    <td th:text="${employee.employee_address}">   
+                    <td th:text="${employee.employee_phone}">    
+                    <td th:text="${employee.employee_email}">   
+                    <td th:date="${employee.employee_joindate}">
+                    <td><a th:href="@{employee/form/{id} (id = ${employee.employee_id})}">Edit</a> | 
+                        <form th:action="@{/employee/delete/{id} (id = ${employee.employee_id})}" method="post">
+                            <button type="submit">Delete</button>    
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

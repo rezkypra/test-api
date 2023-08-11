@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-        <form th:action="@{/checkingdrug/save}" method="post" th:object="${checkingdrug}">
+        <form th:action="@{/purchase/save}" method="post" th:object="${checkingdrug}">
             <input type="text" name="checkingDrug_id" id="checkingDrug_id" th:field="*{checkingDrug_id}" placeholder="id" />
             <select th:field="*{drugs}">
                 <option th:each="drug: ${drugs}" th:value="${drug.drug_id}" th:selected="${drug.drug_id" th:text="${drug.drug_name}"></option>

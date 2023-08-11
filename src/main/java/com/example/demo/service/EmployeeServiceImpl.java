@@ -26,7 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Boolean Save(Employee model) {
         employeeRepository.save(model);
-        return employeeRepository.findById(model.getEmployeeId()).isPresent();
+        return employeeRepository.findById(model.getId()).isPresent();
     }
 
 
@@ -34,6 +34,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Boolean Delete(Integer employeeId) {
         employeeRepository.deleteById(employeeId);
         return !employeeRepository.findById(employeeId).isPresent();
+    }
+
+    @Override
+    public Integer findIdByEmail(String email) {
+        return employeeRepository.findIdByEmail(email);
     }
 
 }

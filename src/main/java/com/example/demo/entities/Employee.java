@@ -4,73 +4,59 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import java.sql.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "tb_m_employee")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int employeeId;
-    private String employeeName;
-    private String employeeAddress;
-    private String employeePhone;
-    private String employeeEmail;
-    private Date employeeJoinDate;
+    private int id;
+    private String name;
+    private String address;
+    private String phone;
+    private String email;
 
-    @OneToMany(mappedBy = "employee")
-    private List<Employee> employee;
-    public int getEmployeeId() {
-        return employeeId;
+    public int getId() {
+        return id;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
+    public String getName() {
+        return name;
     }
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getEmployeeAddress() {
-        return employeeAddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setEmployeeAddress(String employeeAddress) {
-        this.employeeAddress = employeeAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getEmployeePhone() {
-        return employeePhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setEmployeePhone(String employeePhone) {
-        this.employeePhone = employeePhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getEmployeeEmail() {
-        return employeeEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmployeeEmail(String employeeEmail) {
-        this.employeeEmail = employeeEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Date getEmployeeJoinDate() {
-        return employeeJoinDate;
-    }
-
-    public void setEmployeeJoinDate(Date employeeJoinDate) {
-        this.employeeJoinDate = employeeJoinDate;
-    }
 
     public void add(Employee employee) {
     }

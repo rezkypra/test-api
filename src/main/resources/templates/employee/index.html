@@ -28,7 +28,6 @@
                     <td th:text="${employee.employee_address}">   
                     <td th:text="${employee.employee_phone}">    
                     <td th:text="${employee.employee_email}">   
-                    <td th:date="${employee.employee_joindate}">
                     <td><a th:href="@{employee/form/{id} (id = ${employee.employee_id})}">Edit</a> | 
                         <form th:action="@{/employee/delete/{id} (id = ${employee.employee_id})}" method="post">
                             <button type="submit">Delete</button>    

@@ -35,6 +35,5 @@ public class CheckingDrugServiceImpl implements CheckingDrugService {
         checkingDrugRepository.deleteById(id);
         return !checkingDrugRepository.findById(id).isPresent();
     }
-
     
 }

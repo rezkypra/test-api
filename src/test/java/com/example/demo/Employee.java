@@ -2,8 +2,6 @@ package com.example.demo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.sql.Date;
-
 import com.example.demo.service.EmployeeService;
 
 import org.junit.jupiter.api.Test;
@@ -20,13 +18,11 @@ class Employee {
 	public void Save() {
         Boolean expected = true;
         com.example.demo.entities.Employee employee = new com.example.demo.entities.Employee();
-        employee.setEmployeeId(2);
-        employee.setEmployeeName("Deni");
-        employee.setEmployeeAddress("Jl Karbela");
-        employee.setEmployeePhone("083648136812");
-        employee.setEmployeeEmail("denysiregar33@gmail.com");
-        Date employeeJoinDate = Date.valueOf("2023-08-07");
-        employee.setEmployeeJoinDate(employeeJoinDate);
+        employee.setId(2);
+        employee.setName("Deni");
+        employee.setAddress("Jl Karbela");
+        employee.setPhone("083648136812");
+        employee.setEmail("denysiregar33@gmail.com");
 
         Boolean result = employeeService.Save(employee);
 

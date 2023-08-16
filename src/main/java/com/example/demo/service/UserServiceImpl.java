@@ -29,12 +29,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean Save(Login model) {
         userRepository.save(model);
-        return userRepository.findById(model.getLogin_id()).isPresent();
+        return userRepository.findById(model.getId()).isPresent();
     }
 
     @Override
     public Boolean Delete(Integer id) {
         // TODO Auto-generated method stub
-        return null;
+        return true;
     }
 }

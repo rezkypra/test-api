@@ -27,10 +27,10 @@ public class AccountServiceImpl implements AccountService {
 
         boolean resultEmployee = employeeService.Save(employee);
         if(resultEmployee) {
-            Integer employee_id = employeeService.findIdByEmail(registerRequest.getEmail());
+            Integer id = employeeService.findIdByEmail(registerRequest.getEmail());
             Login login = new Login();
-            login.setLogin_id(employee_id);
-            login.setLoginPassword(passwordEncoder.encode(registerRequest.getPassword()));
+            login.setId(id);
+            login.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
 
             boolean resultUser = userService.Save(login);
             return resultUser;

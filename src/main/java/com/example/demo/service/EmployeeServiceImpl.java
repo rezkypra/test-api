@@ -19,8 +19,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee Get(Integer employeeId) {
-        return employeeRepository.findById(employeeId).orElseThrow(null);
+    public Employee Get(Integer Id) {
+        return employeeRepository.findById(Id).orElseThrow(null);
     }
 
     @Override
@@ -31,9 +31,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public Boolean Delete(Integer employeeId) {
-        employeeRepository.deleteById(employeeId);
-        return !employeeRepository.findById(employeeId).isPresent();
+    public Boolean Delete(Integer Id) {
+        employeeRepository.deleteById(Id);
+        return !employeeRepository.findById(Id).isPresent();
     }
 
     @Override

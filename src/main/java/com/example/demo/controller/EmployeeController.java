@@ -24,9 +24,9 @@ public class EmployeeController {
     }
 
     @GetMapping(value = {"form", "form/{employee_id}"})
-    public String form(Model model, @PathVariable(required = false) Integer employee_id) {
-        if (employee_id != null) {
-            model.addAttribute("employee", employeeService.Get(employee_id));
+    public String form(Model model, @PathVariable(required = false) Integer id) {
+        if (id != null) {
+            model.addAttribute("employee", employeeService.Get(id));
         } else {
             model.addAttribute("employee", new Employee());
         }

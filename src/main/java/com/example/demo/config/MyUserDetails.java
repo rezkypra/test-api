@@ -25,7 +25,7 @@ public class MyUserDetails implements UserDetails, UserDetailsService {
 
     public MyUserDetails(Login account) {
         this.username = account.getEmployee().getEmail();
-        this.password = account.getLoginPassword();
+        this.password = account.getPassword();
         this.authority = new SimpleGrantedAuthority(account.getRole().getRole_name());
     }
 

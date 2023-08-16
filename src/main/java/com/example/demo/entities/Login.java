@@ -11,22 +11,22 @@ import javax.persistence.Table;
 @Table(name = "tb_m_login")
 public class Login {
    @Id
-   private Integer login_id;
-   public Integer getLogin_id() {
-    return login_id;
+   private Integer id;
+   public Integer getId() {
+    return id;
 }
 
-public void setLogin_id(Integer login_id) {
-    this.login_id = login_id;
+public void setId(Integer id) {
+    this.id = id;
 }
 
-private String login_username;
-   public String getLoginUsername() {
-    return login_username;
+private String username;
+   public String getUsername() {
+    return username;
 }
 
-public void setLoginUsername(String login_username) {
-    this.login_username = login_username;
+public void setUsername(String username) {
+    this.username = username;
 }
 
    @ManyToOne
@@ -38,12 +38,12 @@ public void setLoginUsername(String login_username) {
    private Employee employee;
 
 
-public String getLoginPassword() {
-    return login_password;
+public String getPassword() {
+    return password;
 }
 
-public void setLoginPassword(String login_password) {
-    this.login_password = login_password;
+public void setPassword(String password) {
+    this.password = password;
 }
 
 public Role getRole() {
@@ -62,5 +62,5 @@ public void setEmployee(Employee employee) {
     this.employee = employee;
 }
 
-private String login_password;
+private String password;
 }

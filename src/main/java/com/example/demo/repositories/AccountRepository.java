@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AccountRepository extends JpaRepository<Employee, Integer> {
-    @Query("SELECT l FROM Login l JOIN l.employee e WHERE e.employee_name = ?1")
-    public Login login(String employee_email);
+    @Query("SELECT l FROM Login l JOIN l.employee e WHERE e.email = ?1")
+    public Login login(String email);
     // public Boolean register();
 }

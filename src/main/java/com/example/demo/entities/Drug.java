@@ -16,28 +16,28 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Drug {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer drug_id;
-    private String drug_name;
+    private Integer id;
+    private String name;
     private Integer stock;
     private Integer price;
 
     @OneToMany(mappedBy = "drug")
     @JsonIgnore
     private List<CheckingDrug> checkingDrug;
-    public Integer getDrug_id() {
-        return drug_id;
+    public Integer getid() {
+        return id;
     }
 
-    public void setDrug_id(Integer drug_id) {
-        this.drug_id = drug_id;
+    public void setDrug_id(Integer id) {
+        this.id = id;
     }
 
-    public String getDrug_name() {
-        return drug_name;
+    public String getname() {
+        return name;
     }
 
-    public void setDrug_name(String drug_name) {
-        this.drug_name = drug_name;
+    public void setDrug_name(String name) {
+        this.name = name;
     }
 
     public Integer getStock() {

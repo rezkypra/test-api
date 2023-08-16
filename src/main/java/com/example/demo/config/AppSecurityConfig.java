@@ -25,7 +25,7 @@ public class AppSecurityConfig {
             try {
                 auth
                     .antMatchers("/api/user/**").permitAll()
-                    .antMatchers("/api/drug/**").hasAnyRole("STAFF","ADMIN")
+                    .antMatchers("/api/drug/**").permitAll()
                     .antMatchers("/api/checkingdrug/**").hasRole("ADMIN")
                     .anyRequest().authenticated()
                     .and()

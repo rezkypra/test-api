@@ -26,7 +26,7 @@ public class DrugServiceImpl implements DrugService {
     @Override
     public Boolean Save(Drug model) {
         drugRepository.save(model);
-        return drugRepository.findById(model.getDrug_id()).isPresent();
+        return drugRepository.findById(model.getid()).isPresent();
     }
 
 
